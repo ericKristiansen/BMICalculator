@@ -152,6 +152,12 @@ namespace BodyMassIndex
 
         #endregion Override
 
+        /// <summary>
+        /// When the form loads, we want to direct the focus to the height
+        /// control.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bodyMassIndexForm_Load(object sender, EventArgs e)
         {
             heightTextBox.Focus();

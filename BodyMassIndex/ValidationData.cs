@@ -15,7 +15,8 @@ namespace BodyMassIndex
     /// //////////////////////////////////////////////////////////
     public class ValidationData
     {
-        
+
+        private const int BMI_FACTOR = 703;
         private float height { get; set; }
         private float weight { get; set; }
         private bool isValidated;
@@ -45,7 +46,7 @@ namespace BodyMassIndex
         /// ///////////////////////////////////////////////////
         public void calculateBodyMassIndex()
         {
-            calculatedBMI = weight * 703 / Math.Pow(height, Utilities.SQUARE_EXPONENT);
+            calculatedBMI = weight * BMI_FACTOR / Math.Pow(height, Utilities.SQUARE_EXPONENT);
         }
 
 

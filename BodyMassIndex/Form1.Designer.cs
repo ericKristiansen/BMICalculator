@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(bodyMassIndexForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.scalesPictureBox = new System.Windows.Forms.PictureBox();
             this.bmiDescriptionLabel = new System.Windows.Forms.Label();
             this.weightDescriptionLabel = new System.Windows.Forms.Label();
             this.heightDescriptionLabel = new System.Windows.Forms.Label();
@@ -40,27 +41,28 @@
             this.heightTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.clearScreenButton = new System.Windows.Forms.Button();
             this.calculateBMIButton = new System.Windows.Forms.Button();
-            this.errorLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.welcomeLabel = new System.Windows.Forms.Label();
-            this.scalesPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scalesPictureBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scalesPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -80,8 +82,18 @@
             this.splitContainer1.Panel2.Controls.Add(this.weightTextBox);
             this.splitContainer1.Panel2.Controls.Add(this.heightTextBox);
             this.splitContainer1.Size = new System.Drawing.Size(431, 162);
-            this.splitContainer1.SplitterDistance = 269;
+            this.splitContainer1.SplitterDistance = 270;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // scalesPictureBox
+            // 
+            this.scalesPictureBox.Image = global::BodyMassIndex.Properties.Resources.customScales;
+            this.scalesPictureBox.InitialImage = global::BodyMassIndex.Properties.Resources.customScales;
+            this.scalesPictureBox.Location = new System.Drawing.Point(3, 3);
+            this.scalesPictureBox.Name = "scalesPictureBox";
+            this.scalesPictureBox.Size = new System.Drawing.Size(187, 107);
+            this.scalesPictureBox.TabIndex = 20;
+            this.scalesPictureBox.TabStop = false;
             // 
             // bmiDescriptionLabel
             // 
@@ -184,6 +196,16 @@
             this.panel3.Size = new System.Drawing.Size(435, 98);
             this.panel3.TabIndex = 21;
             // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorLabel.ForeColor = System.Drawing.Color.Salmon;
+            this.errorLabel.Location = new System.Drawing.Point(0, 78);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 17);
+            this.errorLabel.TabIndex = 3;
+            // 
             // clearScreenButton
             // 
             this.clearScreenButton.BackColor = System.Drawing.Color.DimGray;
@@ -209,16 +231,6 @@
             this.calculateBMIButton.Text = "Calculate BMI";
             this.calculateBMIButton.UseVisualStyleBackColor = false;
             this.calculateBMIButton.Click += new System.EventHandler(this.calculateBMIButton_Click);
-            // 
-            // errorLabel
-            // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorLabel.ForeColor = System.Drawing.Color.Salmon;
-            this.errorLabel.Location = new System.Drawing.Point(0, 78);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(0, 17);
-            this.errorLabel.TabIndex = 3;
             // 
             // panel2
             // 
@@ -252,16 +264,6 @@
             this.welcomeLabel.TabIndex = 8;
             this.welcomeLabel.Text = "Welcome To BMI Calculator";
             // 
-            // scalesPictureBox
-            // 
-            this.scalesPictureBox.Image = global::BodyMassIndex.Properties.Resources.customScales;
-            this.scalesPictureBox.InitialImage = global::BodyMassIndex.Properties.Resources.customScales;
-            this.scalesPictureBox.Location = new System.Drawing.Point(3, 3);
-            this.scalesPictureBox.Name = "scalesPictureBox";
-            this.scalesPictureBox.Size = new System.Drawing.Size(187, 107);
-            this.scalesPictureBox.TabIndex = 20;
-            this.scalesPictureBox.TabStop = false;
-            // 
             // bodyMassIndexForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,13 +286,13 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.scalesPictureBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scalesPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
