@@ -261,7 +261,7 @@
             this.welcomeLabel.Location = new System.Drawing.Point(59, 0);
             this.welcomeLabel.Name = "welcomeLabel";
             this.welcomeLabel.Size = new System.Drawing.Size(301, 29);
-            this.welcomeLabel.TabIndex = 8;
+            this.welcomeLabel.TabIndex = 0;
             this.welcomeLabel.Text = "Welcome To BMI Calculator";
             // 
             // bodyMassIndexForm
@@ -278,6 +278,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "bodyMassIndexForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BMI Calculator";
             this.Load += new System.EventHandler(this.bodyMassIndexForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

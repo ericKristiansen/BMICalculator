@@ -14,6 +14,7 @@ namespace BodyMassIndex
         public bodyMassIndexForm()
         {
             InitializeComponent();
+            heightTextBox.Select();
         }
 
         #region Button Handlers
@@ -48,8 +49,10 @@ namespace BodyMassIndex
             //reset controls
             resetLabel(bodyMassIndexLabel, Utilities.ZERO_DOT_ZERO);
             resetLabel(errorLabel);
-            resetTextBox(heightTextBox);
             resetTextBox(weightTextBox);
+            resetTextBox(heightTextBox);
+
+            splitContainer1.Panel2.Select();
         }
 
         #endregion Button Handlers
@@ -103,6 +106,7 @@ namespace BodyMassIndex
         /// /////////////////////////////////////////////////////////////
         private float validateNumber(TextBox textBox)
         {
+            string errorString = "";
             float floatNumber = Utilities.NEGATIVE_ONE;
             bool isNumber = float.TryParse(textBox.Text, out floatNumber);
             if (isNumber && floatNumber >= Utilities.ZERO)
@@ -111,8 +115,16 @@ namespace BodyMassIndex
             }
             else
             {
-                displayError(errorLabel, "Error: " + textBox.Name +
-                    " must be a number greater or equal to zero." + Environment.NewLine);
+                if (textBox.Name.Contains("height"))
+                {
+                    errorString = "Please enter numeric height in inches" + Environment.NewLine;
+                }
+                else
+                {
+                    errorString = "Please enter numeric weight in pounds" + Environment.NewLine;
+                }
+
+                displayError(errorLabel, errorString);
                 textBox.Focus();
             }
             return floatNumber;
@@ -160,7 +172,7 @@ namespace BodyMassIndex
         /// <param name="e"></param>
         private void bodyMassIndexForm_Load(object sender, EventArgs e)
         {
-            heightTextBox.Focus();
+            //heightTextBox.Select();
         }
     }
 }
