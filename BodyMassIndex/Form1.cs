@@ -34,9 +34,9 @@ namespace BodyMassIndex
                 vData.calculateBodyMassIndex();
                 bodyMassIndexLabel.Text = String.Format(Utilities.FORMAT_1_DECIMAL_STRING,
                     vData.getCalculateBMI());
+                diagnosisLabel.Text = vData.getDiagnosis();
             }
         }
-
 
         /// <summary>
         /// This method will reset the appropriate controls to their original
@@ -49,6 +49,7 @@ namespace BodyMassIndex
             //reset controls
             resetLabel(bodyMassIndexLabel, Utilities.ZERO_DOT_ZERO);
             resetLabel(errorLabel);
+            resetLabel(diagnosisLabel);
             resetTextBox(weightTextBox);
             resetTextBox(heightTextBox);
 
@@ -106,7 +107,6 @@ namespace BodyMassIndex
         /// /////////////////////////////////////////////////////////////
         private float validateNumber(TextBox textBox)
         {
-            string errorString = "";
             float floatNumber = Utilities.NEGATIVE_ONE;
             bool isNumber = float.TryParse(textBox.Text, out floatNumber);
             if (isNumber && floatNumber >= Utilities.ZERO)
@@ -115,16 +115,9 @@ namespace BodyMassIndex
             }
             else
             {
-                if (textBox.Name.Contains("height"))
-                {
-                    errorString = "Please enter numeric height in inches" + Environment.NewLine;
-                }
-                else
-                {
-                    errorString = "Please enter numeric weight in pounds" + Environment.NewLine;
-                }
+                displayError(errorLabel, "Error: " + textBox.Name +
+                    " must be a number greater or equal to zero." + Environment.NewLine);
 
-                displayError(errorLabel, errorString);
                 textBox.Focus();
             }
             return floatNumber;

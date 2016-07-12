@@ -47,6 +47,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.welcomeLabel = new System.Windows.Forms.Label();
+            this.diagnosisLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -76,6 +77,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.diagnosisLabel);
             this.splitContainer1.Panel2.Controls.Add(this.poundsLabel);
             this.splitContainer1.Panel2.Controls.Add(this.inchesLabel);
             this.splitContainer1.Panel2.Controls.Add(this.bodyMassIndexLabel);
@@ -264,6 +266,15 @@
             this.welcomeLabel.TabIndex = 0;
             this.welcomeLabel.Text = "Welcome To BMI Calculator";
             // 
+            // diagnosisLabel
+            // 
+            this.diagnosisLabel.AutoSize = true;
+            this.diagnosisLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.diagnosisLabel.Location = new System.Drawing.Point(23, 145);
+            this.diagnosisLabel.Name = "diagnosisLabel";
+            this.diagnosisLabel.Size = new System.Drawing.Size(0, 17);
+            this.diagnosisLabel.TabIndex = 23;
+            // 
             // bodyMassIndexForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,6 +328,7 @@
         private System.Windows.Forms.PictureBox scalesPictureBox;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.Label diagnosisLabel;
     }
 }
 

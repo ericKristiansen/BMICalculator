@@ -15,12 +15,46 @@ namespace BodyMassIndex
     /// //////////////////////////////////////////////////////////
     public class ValidationData
     {
+        private const string UNDERWEIGHT = "underweight";
+        private const string NORMAL = "normal";
+        private const string OVERWEIGHT = "overweight";
+        private const string OBESE = "obese";
+        private const double MAX_UNDERWEIGHT = 18.49;
+        private const double MAX_NORMAL = 24.99;
+        private const double MAX_OVERWEIGHT = 29.99;
 
         private const int BMI_FACTOR = 703;
         private float height { get; set; }
         private float weight { get; set; }
         private bool isValidated;
         private double calculatedBMI;
+        private string diagnosis = "";
+
+        /// <summary>
+        /// gets the diagnosis based on the calculated BMI
+        /// </summary>
+        /// <returns name="diagnosis"></returns>
+        public string getDiagnosis()
+        {
+            if (calculatedBMI <= MAX_UNDERWEIGHT)
+            {
+                diagnosis = UNDERWEIGHT;
+            }
+            else if (calculatedBMI <= MAX_NORMAL)
+            {
+                diagnosis = NORMAL;
+            }
+            else if (calculatedBMI <= MAX_OVERWEIGHT)
+            {
+                diagnosis = OVERWEIGHT;
+            }
+            else
+            {
+                diagnosis = OBESE;
+            }
+            return diagnosis;
+        }
+
 
         /// ////////////////////////////////////////////////////////
         /// <summary>
